@@ -1,5 +1,7 @@
 package com.patterns.solid;
 
+import com.patterns.creational.prototype.InvalidCarException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,12 +9,12 @@ public class Main {
         String carType = "electric";
 
         ICar car;
-        if ("car" == carType) {
+        if ("car".equals(carType)) {
             car = new Car();
-        } else if ("electric" == carType) {
+        } else if ("electric".equals(carType)) {
             car = new ElectricCar();
         }else{
-            throw new RuntimeException("Invalid car");
+            throw new InvalidCarException("Invalid car");
         }
         car.accelerate();
     }

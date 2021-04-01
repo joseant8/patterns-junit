@@ -1,11 +1,15 @@
 package mockito.iterator.iterator2;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import mockito.iterator.iterator1.Book;
 
 import java.util.Iterator;
 
 public class Main {
+
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
 
@@ -22,12 +26,11 @@ public class Main {
         Iterator<Book> iterador = books.iterator();
         while (iterador.hasNext()){
             Book book = iterador.next();
-            System.out.println(book);
+            logger.info(book.toString());
         }
-        System.out.println("============");
 
         for (Book book: books) {
-            System.out.println(book);
+            logger.info(book.toString());
         }
     }
 }

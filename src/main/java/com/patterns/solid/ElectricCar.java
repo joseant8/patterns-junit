@@ -1,30 +1,35 @@
 package com.patterns.solid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ElectricCar implements ICar{
+
+    private static final Logger logger = LoggerFactory.getLogger(ElectricCar.class);
 
     private int battery;
 
     @Override
     public void accelerate() {
         if (hasBattery()) {
-            System.out.println("accelerating the car");
+            logger.info("accelerating the car");
         } else {
-            System.out.println("I can not accelerate the car");
+            logger.warn("I can not accelerate the car");
         }
     }
 
     @Override
     public void stop() {
-        System.out.println("accelerating the car");
+        logger.info("stopping the car");
     }
 
     public boolean hasBattery() {
-        System.out.println("checking battery");
+        logger.info("checking battery");
         if (battery < 95) {
-            System.out.println("the battery is very low :(");
+            logger.warn("the battery is very low :(");
             return false;
         } else {
-            System.out.println("battery OK :)");
+            logger.info("battery OK :)");
             return true;
         }
     }
