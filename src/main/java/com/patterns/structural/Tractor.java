@@ -9,7 +9,7 @@ public class Tractor {
             case 1:
                 this.speed = 5; // tortuga
                 break;
-            case 2:
+            default:
                 this.speed = 15; // liebre
                 break;
         }
