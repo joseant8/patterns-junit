@@ -13,7 +13,7 @@ class WeatherTest {
     private WeatherType currentWeather;
     private List<WeatherObserver> observers;
 
-    @Test
+
     @BeforeEach
     void comienzo(){
         System.out.println("comienzo");
@@ -74,9 +74,8 @@ class WeatherTest {
     void changeWeather() {
         WeatherType type = WeatherType.RAINY;
         WeatherObserver computer = new Computer();
+        assertNotNull(type);
         computer.update(type);
-
-
 
     }
 }

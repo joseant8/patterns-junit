@@ -8,10 +8,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ShopCartTest {
 
+    ShopCart trolley;
+
     @BeforeEach
     void setUp() {
-        ShopCart trolley = new ShopCart();
+        trolley = new ShopCart();
     }
 
+    @Test
+    void addProduct(Product product) {
+        int numProductsBefore = trolley.getProducts().size();
+        trolley.addProduct(product);
+        int numProductsAfter = trolley.getProducts().size();
+        assertEquals(numProductsAfter, numProductsBefore+1);
+    }
 
+    @Test
+    void removeProduct(Product product) {
+        int numProductsBefore = trolley.getProducts().size();
+        trolley.removeProduct(product);
+        int numProductsAfter = trolley.getProducts().size();
+        assertEquals(numProductsAfter-1, numProductsBefore);
+    }
 }

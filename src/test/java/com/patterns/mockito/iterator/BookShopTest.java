@@ -34,7 +34,6 @@ class BookShopTest {
     @InjectMocks
     Book book;
 
-
     @Test
     @DisplayName("addBook")
     public void addBook() {
@@ -56,6 +55,7 @@ class BookShopTest {
     public void addBookNull() {
 
         book = null;
+        assertNull(book);
        // verify(bookShop).addBook(bookArgumentCaptor.capture());
 
         //assertEquals(null, bookArgumentCaptor.getValue());
@@ -112,14 +112,8 @@ class BookShopTest {
         verify(bookShop, times(1)).iterator();
 
  */
+        BookShop bookS = new BookShop();
+        assertNotNull(bookS.iterator());
     }
 
-    @Test
-    @DisplayName("iteratorHasNext")
-    public void iteratorHasNext() {
-
-
-
-
-    }
 }
