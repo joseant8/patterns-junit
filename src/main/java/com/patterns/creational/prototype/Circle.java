@@ -24,7 +24,7 @@ public class Circle extends Shape{
         return Math.PI*radio*radio;
     }
 
-    @Override
+    //@Override
     public Circle clone() {
         return new Circle(this.getColor(), this.getRadio());
     }
