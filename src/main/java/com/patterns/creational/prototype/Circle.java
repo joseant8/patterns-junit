@@ -25,7 +25,7 @@ public class Circle extends Shape{
     }
 
 
-    public Circle clone() {
+    public Circle miclone() {
         return new Circle(this.getColor(), this.getRadio());
     }
 
